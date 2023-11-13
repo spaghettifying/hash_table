@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <tgmath.h>
 
 #include "hash_table.h"
 
@@ -35,6 +36,23 @@ void ht_del_hash_table(ht_hash_table* ht) {
     }
     free(ht->items);
     free(ht);
+}
+
+// return an even dist of bucket indexes for an average set of inputs
+static int ht_hash(const char* s, const int a, const int m) {
+    int hash = 0;
+    const int string_len = strlen(s);
+    for (int i = 0; i < string_len; ++i) {
+        hash += (long)pow(a, string_len - (i + 1)) * s[i];
+        hash = hash % m;
+    }
+    return (int)hash;
+}
+
+static int ht_get_hash(const char* s, const int num_buckets, const int attempt) {
+    const int hash_a = ht_hash(s, HT_PRIME_1, num_buckets);
+    const int hash_b = ht_hash(s, HT_PRIME_2, num_buckets);
+    return (hash_a + (attempt * (hash_b + 1))) % num_buckets;
 }
 
 int main() {
