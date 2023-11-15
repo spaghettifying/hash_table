@@ -49,11 +49,17 @@ cmake_ninja_workdir = /home/adam/CLionProjects/hash_table/cmake-build-debug/
 
 build cmake_object_order_depends_target_hash_table: phony || CMakeFiles/hash_table.dir
 
-build CMakeFiles/hash_table.dir/hash_table.c.o: C_COMPILER__hash_table_unscanned_Debug /home/adam/CLionProjects/hash_table/hash_table.c || cmake_object_order_depends_target_hash_table
-  DEP_FILE = CMakeFiles/hash_table.dir/hash_table.c.o.d
+build CMakeFiles/hash_table.dir/src/hash_table.c.o: C_COMPILER__hash_table_unscanned_Debug /home/adam/CLionProjects/hash_table/src/hash_table.c || cmake_object_order_depends_target_hash_table
+  DEP_FILE = CMakeFiles/hash_table.dir/src/hash_table.c.o.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/hash_table.dir
-  OBJECT_FILE_DIR = CMakeFiles/hash_table.dir
+  OBJECT_FILE_DIR = CMakeFiles/hash_table.dir/src
+
+build CMakeFiles/hash_table.dir/src/prime.c.o: C_COMPILER__hash_table_unscanned_Debug /home/adam/CLionProjects/hash_table/src/prime.c || cmake_object_order_depends_target_hash_table
+  DEP_FILE = CMakeFiles/hash_table.dir/src/prime.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/hash_table.dir
+  OBJECT_FILE_DIR = CMakeFiles/hash_table.dir/src
 
 
 # =============================================================================
@@ -63,7 +69,7 @@ build CMakeFiles/hash_table.dir/hash_table.c.o: C_COMPILER__hash_table_unscanned
 #############################################
 # Link the executable hash_table
 
-build hash_table: C_EXECUTABLE_LINKER__hash_table_Debug CMakeFiles/hash_table.dir/hash_table.c.o
+build hash_table: C_EXECUTABLE_LINKER__hash_table_Debug CMakeFiles/hash_table.dir/src/hash_table.c.o CMakeFiles/hash_table.dir/src/prime.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/hash_table.dir
   POST_BUILD = :
