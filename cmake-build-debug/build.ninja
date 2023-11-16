@@ -61,6 +61,12 @@ build CMakeFiles/hash_table.dir/src/prime.c.o: C_COMPILER__hash_table_unscanned_
   OBJECT_DIR = CMakeFiles/hash_table.dir
   OBJECT_FILE_DIR = CMakeFiles/hash_table.dir/src
 
+build CMakeFiles/hash_table.dir/tests/hash_table_test.c.o: C_COMPILER__hash_table_unscanned_Debug /home/adam/CLionProjects/hash_table/tests/hash_table_test.c || cmake_object_order_depends_target_hash_table
+  DEP_FILE = CMakeFiles/hash_table.dir/tests/hash_table_test.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/hash_table.dir
+  OBJECT_FILE_DIR = CMakeFiles/hash_table.dir/tests
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target hash_table
@@ -69,7 +75,7 @@ build CMakeFiles/hash_table.dir/src/prime.c.o: C_COMPILER__hash_table_unscanned_
 #############################################
 # Link the executable hash_table
 
-build hash_table: C_EXECUTABLE_LINKER__hash_table_Debug CMakeFiles/hash_table.dir/src/hash_table.c.o CMakeFiles/hash_table.dir/src/prime.c.o
+build hash_table: C_EXECUTABLE_LINKER__hash_table_Debug CMakeFiles/hash_table.dir/src/hash_table.c.o CMakeFiles/hash_table.dir/src/prime.c.o CMakeFiles/hash_table.dir/tests/hash_table_test.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/hash_table.dir
   POST_BUILD = :

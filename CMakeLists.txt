@@ -4,6 +4,7 @@ project(hash_table C)
 set(CMAKE_C_STANDARD 11)
 
 add_executable(hash_table src/hash_table.c
-        src/hash_table.h
+        include/hash_table.h
         src/prime.c
-        src/prime.h)
+        include/prime.h
+        tests/hash_table_test.c)
